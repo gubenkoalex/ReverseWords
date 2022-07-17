@@ -40,5 +40,22 @@ namespace ReverseWords
             
             return string.Join(" ", strArray);
         }
+
+        public string Similar()
+        {
+            int[] a = new int[] {46, 6, 23, 1, 46, 12, 22, 76, 32, 65, 34, 7, 98 };
+            bool result = false;
+            int cur = a[0];
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = a[i]+1; j < a.Length; j++)
+                {
+                    if (cur == a[j] && i != j)
+                        return "Алярм";
+                }
+            }
+            return "Нот алярм!";
+        }
     }
 }
